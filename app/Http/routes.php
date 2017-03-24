@@ -28,12 +28,27 @@ Route::get('kelasd2/framework/{mhs?}',function($mhs="Anonim"){
 });
 Route::get('pengguna','PenggunaController@awal');
 Route::get('pengguna/tambah','PenggunaController@tambah');
+Route::get('pengguna/{pengguna}','PenggunaController@lihat');
+Route::post('pengguna/simpan','PenggunaController@simpan');
+Route::get('pengguna/edit/{pengguna}','PenggunaController@edit');
+Route::post('pengguna/edit/{pengguna}','PenggunaController@update');
+Route::get('pengguna/hapus/{pengguna}','PenggunaController@hapus');
 
 Route::get('ruangan','RuanganController@awal');
 Route::get('ruangan/tambah','RuanganController@tambah');
+Route::get('ruangan/{ruangan}','RuanganController@lihat');
+Route::post('ruangan/simpan','RuanganController@simpan');
+Route::get('ruangan/edit/{ruangan}','RuanganController@edit');
+Route::post('ruangan/edit/{ruangan}','RuanganController@update');
+Route::get('ruangan/hapus/{ruangan}','RuanganController@hapus');
 
 Route::get('matakuliah','MataKuliahController@awal');
 Route::get('matakuliah/tambah','MataKuliahController@tambah');
+Route::get('matakuliah/{matakuliah}','MatakuliahController@lihat');
+Route::post('matakuliah/simpan','MatakuliahController@simpan');
+Route::get('matakuliah/edit/{matakuliah}','MatakuliahController@edit');
+Route::post('matakuliah/edit/{matakuliah}','MatakuliahController@update');
+Route::get('matakuliah/hapus/{matakuliah}','MatakuliahController@hapus');
 
 Route::get('mahasiswa','MahasiswaController@awal');
 Route::get('mahasiswa/tambah','MahasiswaController@tambah');
