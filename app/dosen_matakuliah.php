@@ -11,7 +11,7 @@ class dosen_matakuliah extends Model
 
     public function dosen()
     {
-    	return $this->belongsToMany(dosen::class);
+    	return $this->belongsTo(dosen::class);
     }
     public function jadwal_matakuliah()
     {
@@ -19,6 +19,15 @@ class dosen_matakuliah extends Model
     }
     public function matakuliah()
     {
-    	return $this->belongsToMany(matakuliah::class);
+    	return $this->belongsTo(matakuliah::class);
+    }
+    public function listDosenDanMatakuliah()
+    {
+        $out = [];
+        foreach ($this->all() as $dsnMtk)
+        {
+            $out[$dsnMtk->id] ="{$dsnMtk->dosen->nama} (Matakuliah{$dsnMtk->matakuliah->title})";
+        }
+        return $out;
     }
 }

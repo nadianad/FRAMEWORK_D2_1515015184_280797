@@ -11,14 +11,14 @@ class jadwal_matakuliah extends Model
 
 	public function mahasiswa()
     {
-    	return $this->belongsToMany(mahasiswa::class);
+    	return $this->belongsTo(mahasiswa::class);
     }
     public function dosen_matakuliah()
     {
-    	return $this->belongsToMany(dosen_matakuliah::class);
+    	return $this->belongsTo(dosen_matakuliah::class);
     }
      public function ruangan()
     {
-    	return $this->belongsToMany(ruangan::class);
+    	return $this->belongsTo(ruangan::class);
     }
 }
